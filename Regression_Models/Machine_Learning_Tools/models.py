@@ -1,6 +1,7 @@
 from sklearn.model_selection import KFold,train_test_split,RandomizedSearchCV
 from sklearn import clone
 from pandas import DataFrame
+from numpy import zeros
 from sklearn.pipeline import Pipeline
 from tensorflow.keras import (layers,Model,Input)
 from tensorflow.keras.backend import clear_session
@@ -44,7 +45,7 @@ def multi_layer_perceptron(input_shape,n_outputs,n_neurons,n_hidden_layers,act,o
             
             x = layers.BatchNormalization(momentum=momentum_bn,epsilon=epsilon_bn)(x)
             
-            
+        
         
     outputs = layers.Dense(n_outputs,activation=out_act,**kwargs)(x)
     
@@ -140,7 +141,7 @@ class Supervised_Model():
         
         cols = list(self.col_trans.get_feature_names_out())
         
-        self.X = pd.DataFrame(X_t,columns=cols)
+        self.X = DataFrame(X_t,columns=cols)
         
         self.steps.append((name,transformer))
     
@@ -154,7 +155,7 @@ class Supervised_Model():
         
         cols = list(self.feat_sel.get_feature_names_out())
         
-        self.X = pd.DataFrame(X_s,columns=cols)
+        self.X = DataFrame(X_s,columns=cols)
         
         self.steps.append((name,selector))
     
@@ -170,7 +171,7 @@ class Supervised_Model():
             
         self.pipeline = Pipeline(steps = self.steps)
         
-        self.pipeline.fit(self.data[features],self.data[target])
+        self.pipeline.fit(self.data[self.features],self.data[self.target])
             
     
     def add_pca_decomposition(self,pca,name='pca_decomposition'):
@@ -187,7 +188,7 @@ class Supervised_Model():
             
             col.append('PC{}'.format(i+1))
         
-        self.X = pd.DataFrame(X_pca,columns=col)
+        self.X = DataFrame(X_pca,columns=col)
         
         self.steps.append((name,pca))
         
@@ -224,10 +225,10 @@ class Supervised_Model():
     def cross_val_score(self,metric,n_folds=10,seed=None):
         
         kfold = KFold(n_splits=n_folds,shuffle=True,random_state=seed)
-        cv_train_score = np.zeros(n_folds)
-        cv_test_score = np.zeros(n_folds)
+        cv_train_score = zeros(n_folds)
+        cv_test_score = zeros(n_folds)
         
-        cv_score = DataFrame(np.zeros((n_folds,2)),columns=['train','test'])
+        cv_score = DataFrame(zeros((n_folds,2)),columns=['train','test'])
         
 
         i=0
