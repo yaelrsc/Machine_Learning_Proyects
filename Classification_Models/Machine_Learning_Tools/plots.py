@@ -16,7 +16,7 @@ def pairplot(data,col,corner=True):
     sns.pairplot(data[col],corner=corner)
     plt.show()
     
-def barplot(data,col,rows=2,cols=2,figsize=(10,5),xlabel_size=15,xticks_size=10,hspace=0.4,wspace=None,rotation=45):
+def barplot1(data,col,hue=None,rows=2,cols=2,figsize=(10,5),xlabel_size=15,xticks_size=10,hspace=0.4,wspace=None,rotation=45):
     
     fig, ax = plt.subplots(rows,cols,figsize=figsize)
     fig.subplots_adjust(hspace=hspace,wspace=wspace)
