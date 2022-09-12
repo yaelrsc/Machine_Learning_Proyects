@@ -236,7 +236,7 @@ class Supervised_Model():
         for train_index, test_index in kfold.split(self.X.values):
 
             X_train, X_test = self.X.values[train_index,:], self.X.values[test_index,:]
-            y_train, y_test = self.y.values[train_index], self.y.values[test_index]
+            y_train, y_test = self.y.values[train_index,:], self.y.values[test_index,:]
 
             clone_model = clone(self.model)
 

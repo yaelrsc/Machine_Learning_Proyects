@@ -29,6 +29,26 @@ def barplot1(data,col,hue=None,rows=2,cols=2,figsize=(10,5),xlabel_size=15,xtick
         a.set_xlabel(c,fontsize=xlabel_size)
 
     plt.show()
+
+def barplot2(data,col,hue=None,rows=2,cols=2,figsize=(10,5),label_size=15,xticks_size=10,hspace=0.4,wspace=None,rotation=45,
+             legend_size=15):
+    
+    fig, ax = plt.subplots(rows,cols,figsize=figsize)
+    fig.subplots_adjust(hspace=hspace,wspace=wspace)
+
+    for c, a in zip(col,ax.flatten()):
+        
+        sns.countplot(x=c,hue=hue,orient='v',data=data,ax=a)
+        a.legend().remove()
+        a.set_xticklabels(a.get_xticklabels(),rotation=rotation,fontdict={'fontsize':xticks_size})
+        a.set_ylabel(' ',fontsize=label_size)
+        a.set_xlabel(c,fontsize=label_size)
+        
+    leg = list(data.groupby(hue).count().index)
+    
+    fig.legend(leg,fontsize=legend_size)
+
+    plt.show()
     
     
 def boxplot1(data,y,col,rows=2,cols=2,figsize=(10,5),label_size=15,xticks_size=10,hspace=0.4,wspace=None,rotation=45):
