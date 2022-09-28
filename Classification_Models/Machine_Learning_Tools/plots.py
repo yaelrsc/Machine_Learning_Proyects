@@ -11,9 +11,9 @@ def correlogram(data,col,h_neg=240,h_pos=10,figsize=(10, 5)):
     sns.heatmap(cor, cmap=cmap,vmin=-1,vmax=1)
     plt.show()
     
-def pairplot(data,col,corner=True):
+def pairplot(data,col,height=2.5,aspect=1,corner=True):
     
-    sns.pairplot(data[col],corner=corner)
+    sns.pairplot(data[col],corner=corner,height=height,aspect=aspect)
     plt.show()
     
 def barplot1(data,col,hue=None,rows=2,cols=2,figsize=(10,5),xlabel_size=15,xticks_size=10,hspace=0.4,wspace=None,rotation=45):
