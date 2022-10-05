@@ -43,10 +43,11 @@ def barplot2(data,col,hue=None,rows=2,cols=2,figsize=(10,5),label_size=15,xticks
         a.set_xticklabels(a.get_xticklabels(),rotation=rotation,fontdict={'fontsize':xticks_size})
         a.set_ylabel(' ',fontsize=label_size)
         a.set_xlabel(c,fontsize=label_size)
-        
-    leg = list(data.groupby(hue).count().index)
     
-    fig.legend(leg,fontsize=legend_size)
+    if hue != None:
+        
+        leg = list(data.groupby(hue).count().index)
+        fig.legend(leg,fontsize=legend_size)
 
     plt.show()
     
