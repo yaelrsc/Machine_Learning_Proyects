@@ -66,3 +66,19 @@ def boxplot1(data,y,col,rows=2,cols=2,figsize=(10,5),label_size=15,xticks_size=1
         a.set_xlabel(c,fontsize=label_size)
 
     plt.show()
+
+
+def boxplot2(data,y,col,rows=2,cols=2,figsize=(10,5),label_size=15,xticks_size=10,hspace=0.4,wspace=None,rotation=45):
+    
+    fig, ax = plt.subplots(rows,cols,figsize=figsize)
+    fig.subplots_adjust(hspace=hspace,wspace=wspace)
+
+    for c, a in zip(col,ax.flatten()):
+        
+        sns.boxplot(y=c,x=y,hue=y,orient='v',data=data,ax=a)
+        a.legend().remove()
+        a.set_xticklabels(a.get_xticklabels(),rotation=rotation,fontdict={'fontsize':xticks_size})
+        a.set_ylabel(y,fontsize=label_size)
+        a.set_xlabel(c,fontsize=label_size)
+
+    plt.show()
