@@ -125,6 +125,8 @@ class Supervised_Model():
         i=0
         
         for train_index, test_index in kfold.split(self.X.values):
+            
+            print('Fold {}\n'.format(i+1))
 
             X_train, X_test = self.X.values[train_index,:], self.X.values[test_index,:]
             y_train, y_test = self.y.values[train_index,:], self.y.values[test_index,:]
@@ -138,7 +140,7 @@ class Supervised_Model():
 
             cv_test_score[i] = metric(y_test,y_pred)
             cv_train_score[i] = metric(y_train,y_train_pred)
-            
+            print('-----------------------------------------------------------\n')
             i+=1
         
         cv_score.iloc[:,0] = cv_train_score
