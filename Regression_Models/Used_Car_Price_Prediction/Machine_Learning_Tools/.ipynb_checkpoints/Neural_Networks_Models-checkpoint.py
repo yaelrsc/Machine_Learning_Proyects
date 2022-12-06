@@ -2,6 +2,18 @@ from tensorflow.keras import (layers,Model,Input)
 from tensorflow.keras.backend import clear_session
 from tensorflow.keras.models import clone_model
 
+from tensorflow.random import set_seed
+from numpy.random import seed as numpy_seed
+from random import seed
+
+
+def set_seed(seed=None):
+    
+    set_seed(seed)
+    numpy_seed(seed)
+    seed(seed)
+
+
 def single_layer_perceptron(input_shape,n_outputs,optimizer,loss,metrics=None,**kwargs):
     
     clear_session()
@@ -17,11 +29,23 @@ def single_layer_perceptron(input_shape,n_outputs,optimizer,loss,metrics=None,**
 
 def multi_layer_perceptron(input_shape,n_outputs,n_neurons,n_hidden_layers,act,out_act,
                            optimizer,loss,metrics=None,dropout=False,batch_normalization=False,
-                           dropout_rate=None,momentum_bn=None,epsilon_bn=None,**kwargs):
+                           dropout_rate=None,momentum_bn=None,epsilon_bn=None,rescaling=True,
+                           data_argumentation=None,**kwargs):
     
     clear_session()
     
     inputs = Input(shape=input_shape)
+    
+    if data_argumentation != None:
+        
+        for da in data_argumentation:
+            
+            inputs = da(inputs)
+        
+    
+    if rescaling:
+        
+        x = layers.Rescaling(1.0 / 255)(inputs)
     
     for i in range(n_hidden_layers):
         

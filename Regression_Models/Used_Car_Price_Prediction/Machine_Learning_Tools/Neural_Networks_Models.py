@@ -2,6 +2,17 @@ from tensorflow.keras import (layers,Model,Input)
 from tensorflow.keras.backend import clear_session
 from tensorflow.keras.models import clone_model
 
+from tensorflow.random import set_seed
+from numpy.random import seed as numpy_seed
+from random import seed
+
+def set_random_seed(random_seed=None):
+    
+    set_seed(random_seed)
+    numpy_seed(random_seed)
+    seed(random_seed)
+
+
 def single_layer_perceptron(input_shape,n_outputs,optimizer,loss,metrics=None,**kwargs):
     
     clear_session()
