@@ -2,4 +2,3 @@ streamlit
 tensorflow-cpu
 numpy
 statsmodels
-pickle
