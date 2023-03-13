@@ -7,11 +7,10 @@ from tensorflow.keras.models import load_model
 col_abil_names = ['Player information','ATTACKING','SKILL','MOVEMENT',
                   'POWER','MENTALITY','DEFENDING','GOALKEEPING']
 
-model_gk = load_model('/Models/fifa_gk_model.h5')
-model_def = load_model('/Models/fifa_def_model.h5')
-model_med = load_model('/Models/fifa_med_model.h5')
-model_del = load_model('/Models/fifa_del_model.h5')
-
+model_gk = load_model('Regression_Models/FIFA_Players_Overall/Models/fifa_gk_model.h5')
+model_def = load_model('Regression_Models/FIFA_Players_Overall/Models/fifa_def_model.h5')
+model_med = load_model('Regression_Models/FIFA_Players_Overall/Models/fifa_med_model.h5')
+model_del = load_model('Regression_Models/FIFA_Players_Overall/Models/fifa_del_model.h5')
 scalers = pickle.load(open('Models/FIFA/scalers', 'rb'))
 
 def predict(x,pos):
