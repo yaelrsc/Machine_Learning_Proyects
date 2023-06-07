@@ -67,7 +67,7 @@ def main():
         x = prep_data(x)
         y = compute_price(x)
 
-        st.write(y)
+        st.write('The price car is : ${:,.2f}'.format(y))
 
 
 if __name__ == '__main__':
