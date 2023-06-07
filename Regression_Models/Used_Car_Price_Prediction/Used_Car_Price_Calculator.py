@@ -12,9 +12,9 @@ X_train = X_train.drop('carID',axis=1)
 brand_values = X_train.brand.unique()
 transmission_values = tuple(X_train.transmission.unique())
 fuelType_values = tuple(X_train.fuelType.unique())
-model_values = tuple(pickle.load(open('most_freq_models', 'rb')))
-preprocessing_data = pickle.load(open('preprocessing_data', 'rb'))
-model = load_model('used_car_price_model.h5') 
+model_values = tuple(pickle.load(open('Regression_Models/Used_Car_Price_Prediction/most_freq_models', 'rb')))
+preprocessing_data = pickle.load(open('Regression_Models/Used_Car_Price_Prediction/preprocessing_data', 'rb'))
+model = load_model('Regression_Models/Used_Car_Price_Prediction/used_car_price_model.h5') 
 
 def prep_data(x):
     
