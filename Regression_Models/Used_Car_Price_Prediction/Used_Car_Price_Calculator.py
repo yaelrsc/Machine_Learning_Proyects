@@ -6,7 +6,7 @@ from tensorflow.keras.models import load_model
 from datetime import datetime
 from math import exp
 
-X_train = read_csv('datasets/X_train.csv')
+X_train = read_csv('Regression_Models/Used_Car_Price_Prediction/datasets/X_train.csv')
 X_train = X_train.drop('carID',axis=1)
 
 brand_values = X_train.brand.unique()
