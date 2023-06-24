@@ -6,7 +6,7 @@ Este repositorio contiene una colección de proyectos de Machine Learning desarr
 
 - **FIFA Player Overall Calculator**: Aplicación generada a partir de un modelo de regresión lineal para calcular la valoración general de los futbolistas del videojuego FIFA. El modelo fue construido con Tensorflow y Keras..
 - **FIFA Player Overall Calculator**: Calculadora del precio de los autos usados basada en un modelo de regresión lineal y creada con Tensorflow.
-- **FIFA Player Overall Calculator**: Elección del mejor modelo para su uso posterior en la clasificación automática de clientes en uno de los grupos de puntuación crediticia establecidos (Good, Poor o Standar). Se aplicó la técnica llamada Bayesian Optimization Tuning para elegir los mejores parámetros de los modelos siguientes: Neural Network, Support Vector Machine y Random Forest.
+- **FIFA Player Overall Calculator**: Elección del mejor modelo para su uso posterior en la clasificación automática de clientes en uno de los grupos de puntuación crediticia establecidos (Good, Poor o Standard). Se aplicó la técnica llamada Bayesian Optimization Tuning para elegir los mejores parámetros de los siguientes modelos: Neural Network, Support Vector Machine y Random Forest. 
 
 ## Contenido del repositorio
 
