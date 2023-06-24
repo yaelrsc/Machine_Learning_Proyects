@@ -4,15 +4,14 @@ Este repositorio contiene una colección de proyectos de Machine Learning desarr
 
 ## Algunos de los Proyectos del repositorio
 
-- **Proyecto 1**: [FIFA Player Overall Calculator]: Aplicación generada a partir de un modelo de regresión lineal para calcular la valoración general de los futbolistas del videojuego FIFA. El modelo fue construido con Tensorflow y Keras..
-- **Proyecto 2**: [Used Car Price Calculator]: Calculadora del precio de los autos usados basada en un modelo de regresión lineal y creada con Tensorflow.
-- **Proyecto 3**: [Credit Score Classifier]: Elección del mejor modelo para su uso posterior en la clasificación automática de clientes en uno de los grupos de puntuación crediticia establecidos (Good, Poor o Standar). Se aplico la técnica llamada Bayesian Optimization Tuning para elegir los mejores parámetros de los modelos siguientes: Neural Network, Support Vector Machine y Random Forest.
+- **FIFA Player Overall Calculator**: Aplicación generada a partir de un modelo de regresión lineal para calcular la valoración general de los futbolistas del videojuego FIFA. El modelo fue construido con Tensorflow y Keras..
+- **FIFA Player Overall Calculator**: Calculadora del precio de los autos usados basada en un modelo de regresión lineal y creada con Tensorflow.
+- **FIFA Player Overall Calculator**: Elección del mejor modelo para su uso posterior en la clasificación automática de clientes en uno de los grupos de puntuación crediticia establecidos (Good, Poor o Standar). Se aplicó la técnica llamada Bayesian Optimization Tuning para elegir los mejores parámetros de los modelos siguientes: Neural Network, Support Vector Machine y Random Forest.
 
 ## Contenido del repositorio
 
-- **Carpeta1**: Breve descripción de la carpeta 1.
-- **Carpeta2**: Breve descripción de la carpeta 2.
-- **Carpeta3**: Breve descripción de la carpeta 3.
+- **Classification_Models**: Breve descripción de la carpeta 1.
+- **Regression_Models**: Breve descripción de la carpeta 2.
 
 ## Tecnologías utilizadas
 
