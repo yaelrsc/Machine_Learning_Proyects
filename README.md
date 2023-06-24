@@ -10,8 +10,8 @@ Este repositorio contiene una colección de proyectos de Machine Learning desarr
 
 ## Contenido del repositorio
 
-- **Classification_Models**: Breve descripción de la carpeta 1.
-- **Regression_Models**: Breve descripción de la carpeta 2.
+- **Classification_Models**: Aplicación de los modelos de regresión.
+- **Regression_Models**: Aplicación de los modelos de clasificación.
 
 ## Tecnologías utilizadas
 
